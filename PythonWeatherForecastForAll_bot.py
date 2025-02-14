@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import os
 
 
+# Load environment variables from .env file
 load_dotenv()
 API_KEY = str(os.getenv('API_KEY'))
 bot = telebot.TeleBot(API_KEY)
@@ -20,8 +21,10 @@ today_weather = []
 tomorrow_weather = []
 seven_days_weather = []
 
+# Dictionary to track user states
 user_states = {}
 
+# Mapping of OpenWeatherMap icon codes to emojis
 icon_code = {
     '01d': '☀️',  # Clear sky (day)
     '02d': '⛅',  # Few clouds (day)
@@ -43,6 +46,7 @@ icon_code = {
     '50n': '💨'   # Mist (night)
 }
 
+# Mapping of WeatherAPI condition codes to emojis for night-time
 night_icon_code_to_emoji = {
     1000: "🌙",  # Clear
     1003: "☁️",  # Partly Cloudy
@@ -65,6 +69,7 @@ night_icon_code_to_emoji = {
     1282: "🌪️"  # Blizzard
 }
 
+# Mapping of weather condition descriptions to emojis
 condition_to_emoji = {
     "Clear": "☀️",
     "Sunny": "☀️",
@@ -89,6 +94,7 @@ condition_to_emoji = {
 
 city_name_list = []
 
+# Mapping of weather condition descriptions to emojis for 7-day forecasts
 condition_to_emoji_7_days = {
     "Thunderstorm with light rain": "⛈️",  # Thunderstorm
     "Thunderstorm with rain": "⛈️",  # Thunderstorm
@@ -400,4 +406,5 @@ def weather_type_handler(call):
         bot.register_next_step_handler(call.message, location_type)
 
 
+# Running the bot infinitely
 bot.polling(non_stop=True)
