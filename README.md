@@ -1,4 +1,4 @@
-# Weather Forecast Bot 🌦️⛈️
+# Weather Forecast Bot 🌦️
 
 A **Python-based Telegram bot** that provides real-time weather forecasts for any location. Users can get weather details for **now**, **today**, **tomorrow**, and **7 days**. The bot supports location sharing and city name search, offering temperature, humidity, weather conditions, sunrise, and sunset times. Built using the **PyTelegramBotAPI** library and **WeatherAPI**, this bot is a comprehensive weather forecasting tool.
 
